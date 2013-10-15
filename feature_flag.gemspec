@@ -6,10 +6,10 @@ require 'feature_flag/version'
 Gem::Specification.new do |gem|
   gem.name          = "feature_flag"
   gem.version       = FeatureFlag::VERSION
-  gem.authors       = ["trevor-oke"]
-  gem.email         = ["trevor.oke@mosaic.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.authors       = ["Trevor Oke"]
+  gem.email         = ["trevor@trevoroke.com"]
+  gem.description   = %q{Feature toggle for ruby/rails}
+  gem.summary       = %q{Feature toggle for ruby/rails}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
