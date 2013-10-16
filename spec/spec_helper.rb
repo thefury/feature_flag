@@ -5,7 +5,7 @@ require 'sqlite3'
 
 ActiveRecord::Base.establish_connection(
   adapter: 'sqlite3',
-  database: ':memory')
+  database: 'db/sqlite3')
 
 ActiveRecord::Schema.define do
   self.verbose = false
