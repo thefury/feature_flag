@@ -19,4 +19,11 @@ Gem::Specification.new do |gem|
 
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'rspec'
+  gem.add_development_dependency 'shoulda-matchers'
+  gem.add_development_dependency 'guard'
+  gem.add_development_dependency 'guard-rspec'
+  gem.add_development_dependency 'sqlite3'
+
+  gem.add_runtime_dependency 'activerecord'
+
 end
