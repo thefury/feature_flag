@@ -18,7 +18,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Executing code based on feature
+
+    FeatureFlag::Toggle.when_active(:featurename) do
+      # feature code here
+    end
+
+### Testing if a feature is active
+
+    FeatureFlag::Toggle.active?(:featurename)
+
 
 ## Contributing
 
