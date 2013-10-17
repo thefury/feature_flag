@@ -42,4 +42,18 @@ describe FeatureFlag::Toggle do
       value.should eq 1
     end
   end
+
+  describe ".require" do
+    it "raises an exception if the feature does not exist" do
+      expect { FeatureFlag::Toggle.require(:unknown) }.to raise_exception
+    end
+
+    it "raises an execption if the feature is inactive" do
+      expect { FeatureFlag::Toggle.require(:inactive) }.to raise_exception
+    end
+
+    it "does not raise an exception if the feature is active" do
+      expect { FeatureFlag::Toggle.require(:active) }.to_not raise_exception
+    end
+  end
 end

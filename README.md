@@ -28,6 +28,9 @@ Or install it yourself as:
 
     FeatureFlag::Toggle.active?(:featurename)
 
+### Ensuring a feature is active
+
+    FeatureFlag::Toggle.require(:featurename)
 
 ## Contributing
 
