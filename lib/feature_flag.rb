@@ -6,7 +6,6 @@ module FeatureFlag
     self.table_name = 'feature_flag_toggles'
 
     def self.when_active(feature)
-      #toggle = FeatureFlag::Toggle.where(name: feature, active: true)
       yield if Toggle.active?(feature)
     end
 
