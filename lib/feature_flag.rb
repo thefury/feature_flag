@@ -8,6 +8,10 @@ module FeatureFlag
     def self.when_active(feature)
       yield if Toggle.active?(feature)
     end
+    
+    def self.require(feature)
+      raise unless Toggle.active?(feature)
+    end
 
     def self.active?(feature)
       toggle = FeatureFlag::Toggle.where(name: feature, active: true).first
