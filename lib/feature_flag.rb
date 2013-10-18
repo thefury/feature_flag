@@ -1,3 +1,4 @@
+require "rails"
 require "feature_flag/version"
 require 'active_record'
 
@@ -17,4 +18,5 @@ module FeatureFlag
       toggle = FeatureFlag::Toggle.where(name: feature, active: true).first
     end
   end
+
 end

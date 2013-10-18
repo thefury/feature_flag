@@ -16,6 +16,11 @@ Or install it yourself as:
 
     $ gem install feature_flag
 
+## Migration
+
+    $ rake feature_flag:install
+    $ rake db:migrate
+
 ## Usage
 
 ### Executing code based on feature

@@ -26,5 +26,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'sqlite3'
 
   gem.add_runtime_dependency 'activerecord'
-
+  gem.add_runtime_dependency 'rails'
 end
