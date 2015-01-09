@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Migration
 
-    $ rake feature_flag:install
+    $ rails generate feature_flag:install
     $ rake db:migrate
 
 ## Usage
