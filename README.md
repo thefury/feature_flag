@@ -1,5 +1,5 @@
-# FeatureFlag
-
+# SimpleToggle
+    
 TODO: Write a gem description
 
 ## Installation
