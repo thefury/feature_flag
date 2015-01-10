@@ -1,16 +1,16 @@
 require 'rails/generators'
 require 'rails/generators/named_base'
 
-module FeatureFlag
+module SimpleToggle
   module Generators
     class InstallGenerator < Rails::Generators::Base
       include Rails::Generators::Migration
 
-      desc "generates a migration for feature toggles"
+      desc "generates a migration for simpe toggles"
       source_root File.expand_path('../../templates', __FILE__)
 
       def copy_migrations
-        copy_migration "create_feature_flag_toggles.rb"
+        copy_migration "create_simple_toggles.rb"
       end
 
       def self.next_migration_number(dirname)

@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'feature_flag'
+require 'simple_toggle'
 require 'active_record'
 require 'sqlite3'
 
@@ -9,8 +9,8 @@ ActiveRecord::Base.establish_connection(
 
 ActiveRecord::Schema.define do
   self.verbose = false
-  
-  create_table 'feature_flag_toggles', force: true do |t|
+
+  create_table 'simple_toggle_toggles', force: true do |t|
     t.string :name
     t.boolean :active
   end

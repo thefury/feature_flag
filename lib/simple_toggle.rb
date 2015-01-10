@@ -1,21 +1,21 @@
 require "rails"
-require "feature_flag/version"
+require "simple_toggle/version"
 require 'active_record'
 
-module FeatureFlag
+module SimpleToggle
   class Toggle < ActiveRecord::Base
-    self.table_name = 'feature_flag_toggles'
+    self.table_name = 'simple_toggle_toggles'
 
     def self.when_active(feature)
       yield if Toggle.active?(feature)
     end
-    
+
     def self.require(feature)
       raise unless Toggle.active?(feature)
     end
 
     def self.active?(feature)
-      toggle = FeatureFlag::Toggle.where(name: feature, active: true).first
+      toggle = Toggle.where(name: feature, active: true).first
     end
   end
 
