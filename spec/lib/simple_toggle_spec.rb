@@ -10,50 +10,35 @@ describe SimpleToggle::Toggle do
   end
 
   describe ".active?" do
-    it "returns false for unknown toggle" do
-      SimpleToggle::Toggle.active?(:unknown).should be_falsey
-    end
-
-    it "returns true for an active toggle" do
-      SimpleToggle::Toggle.active?(:active).should be_truthy
-    end
-
-    it "returns false for an inactive toggle" do
-      SimpleToggle::Toggle.active?(:inactive).should be_falsey
-    end
+    specify { expect(SimpleToggle::Toggle.active?(:unknown)).to be_falsey }
+    specify { expect(SimpleToggle::Toggle.active?(:active)).to be_truthy }
+    specify { expect(SimpleToggle::Toggle.active?(:inactive)).to be_falsey }
   end
 
   describe ".when_active" do
+    before(:each) do
+      @value = 0
+    end
+
     it "does not execute the block for unknown toggles" do
-      value = 0
-      SimpleToggle::Toggle.when_active(:unknown) { value = 1 }
-      value.should eq 0
+      SimpleToggle::Toggle.when_active(:unknown) { @value = 1 }
+      expect(@value).to eq 0
     end
 
     it "does not execute the block for inactive toggles" do
-      value = 0
-      SimpleToggle::Toggle.when_active(:inactive) { value = 1 }
-      value.should eq 0
+      SimpleToggle::Toggle.when_active(:inactive) { @value = 1 }
+      expect(@value).to eq 0
     end
 
     it "executes the block for active toggles" do
-      value = 0
-      SimpleToggle::Toggle.when_active(:active) { value = 1 }
-      value.should eq 1
+      SimpleToggle::Toggle.when_active(:active) { @value = 1 }
+      expect(@value).to eq 1
     end
   end
 
   describe ".require" do
-    it "raises an exception if the toggle does not exist" do
-      expect { SimpleToggle::Toggle.require(:unknown) }.to raise_exception
-    end
-
-    it "raises an execption if the toggle is inactive" do
-      expect { SimpleToggle::Toggle.require(:inactive) }.to raise_exception
-    end
-
-    it "does not raise an exception if the toggle is active" do
-      expect { SimpleToggle::Toggle.require(:active) }.to_not raise_exception
-    end
+    specify { expect{ SimpleToggle::Toggle.require(:unknown) }.to raise_exception }
+    specify { expect{ SimpleToggle::Toggle.require(:inactive) }.to raise_exception }
+    specify { expect{ SimpleToggle::Toggle.require(:active) }.to_not raise_exception }
   end
 end
