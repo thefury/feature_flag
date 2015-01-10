@@ -6,7 +6,7 @@ TODO: Write a gem description
 
 Add this line to your application's Gemfile:
 
-    gem 'feature_flag'
+    gem 'simple_toggle'
 
 And then execute:
 
@@ -14,28 +14,28 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install feature_flag
+    $ gem install simple_toggle
 
 ## Migration
 
-    $ rails generate feature_flag:install
+    $ rails generate simple_toggle:install
     $ rake db:migrate
 
 ## Usage
 
 ### Executing code based on feature
 
-    FeatureFlag::Toggle.when_active(:featurename) do
+    SimpleToggle::Toggle.when_active(:featurename) do
       # feature code here
     end
 
 ### Testing if a feature is active
 
-    FeatureFlag::Toggle.active?(:featurename)
+    SimpleToggle::Toggle.active?(:featurename)
 
 ### Ensuring a feature is active
 
-    FeatureFlag::Toggle.require(:featurename)
+    SimpleToggle::Toggle.require(:featurename)
 
 ## Contributing
 

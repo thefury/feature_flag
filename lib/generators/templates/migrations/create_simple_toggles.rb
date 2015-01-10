@@ -1,4 +1,4 @@
-class CreateSimpleToggleToggles < ActiveRecord::Migration
+class CreateSimpleToggles < ActiveRecord::Migration
   def change
     create_table :simple_toggle_toggles do |t|
       t.string :name
