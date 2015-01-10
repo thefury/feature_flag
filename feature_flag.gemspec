@@ -18,12 +18,14 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_development_dependency 'rake'
-  gem.add_development_dependency 'rspec'
+  gem.add_development_dependency 'rspec', [">= 3.1.0"]
   gem.add_development_dependency 'shoulda-matchers'
   gem.add_development_dependency 'guard'
   gem.add_development_dependency 'guard-rspec'
   gem.add_development_dependency 'rb-readline'
   gem.add_development_dependency 'sqlite3'
+  gem.add_development_dependency 'pry'
+  gem.add_development_dependency 'pry-nav'
 
   gem.add_runtime_dependency 'activerecord'
   gem.add_runtime_dependency 'rails'

@@ -11,15 +11,15 @@ describe FeatureFlag::Toggle do
 
   describe ".active?" do
     it "returns false for unknown feature" do
-      FeatureFlag::Toggle.active?(:unknown).should be_false
+      FeatureFlag::Toggle.active?(:unknown).should be_falsey
     end
 
     it "returns true for an active feature" do
-      FeatureFlag::Toggle.active?(:active).should be_true
+      FeatureFlag::Toggle.active?(:active).should be_truthy
     end
 
     it "returns false for an inactive feature" do
-      FeatureFlag::Toggle.active?(:inactive).should be_false
+      FeatureFlag::Toggle.active?(:inactive).should be_falsey
     end
   end
 
