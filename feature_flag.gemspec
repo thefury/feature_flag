@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["trevor@trevoroke.com"]
   gem.description   = %q{Feature toggle for ruby/rails}
   gem.summary       = %q{Feature toggle for ruby/rails}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/thefury/feature_flag"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
