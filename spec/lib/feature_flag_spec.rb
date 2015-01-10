@@ -9,7 +9,7 @@ describe FeatureFlag::Toggle do
     FeatureFlag::Toggle.create!(INACTIVE_PARAM)
   end
 
-  describe ".active" do
+  describe ".active?" do
     it "returns false for unknown feature" do
       FeatureFlag::Toggle.active?(:unknown).should be_false
     end
@@ -23,7 +23,7 @@ describe FeatureFlag::Toggle do
     end
   end
 
-  describe ".feature" do
+  describe ".when_active" do
     it "does not execute the block for unknown features" do
       value = 0
       FeatureFlag::Toggle.when_active(:unknown) { value = 1 }
