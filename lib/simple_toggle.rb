@@ -17,6 +17,16 @@ module SimpleToggle
     def self.active?(feature)
       toggle = Toggle.where(name: feature, active: true).first
     end
+
+    def self.activate(feature)
+      toggle = Toggle.find_or_create_by(name: feature)
+      toggle.update_attributes(active: true)
+    end
+
+    def self.deactivate(feature)
+      toggle = Toggle.find_or_create_by(name: feature)
+      toggle.update_attributes(active: false)
+    end
   end
 
 end
